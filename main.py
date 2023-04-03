@@ -1,16 +1,16 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
 
 
-# Press the green button in the gutter to run the script.
+def click_event(event, x, y, flags, params):
+    if event == cv2.EVENT_LBUTTONDOWN:
+        print(x, ' ', y)
+
+
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    img = cv2.imread(cv2.samples.findFile("tree.jpg"))
+    cv2.imshow("Window", img)
+    cv2.setMouseCallback('Window', click_event)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
