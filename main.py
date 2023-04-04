@@ -13,8 +13,8 @@ if __name__ == "__main__":
     cv2.imshow("Window 2", thresholded_image)
 
     kernel = np.ones((5, 5))
-    eroded_image = cv2.erode(thresholded_image, kernel, iterations=1)
-    # eroded_image = cv2.dilate(eroded_image, kernel, iterations=1)
+    dilated_image = cv2.dilate(thresholded_image, kernel, iterations=1)
+    eroded_image = cv2.erode(dilated_image, kernel, iterations=6)
 
     cv2.imshow("Window 3", eroded_image)
     cv2.waitKey(0)
