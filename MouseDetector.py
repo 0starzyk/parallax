@@ -9,10 +9,6 @@ class MouseDetector:
             MouseDetector.y = y
 
     @staticmethod
-    def print_coordinates():
-        print(MouseDetector.x, MouseDetector.y)
-
-    @staticmethod
     def get_coordinates():
         return MouseDetector.x, MouseDetector.y
 
