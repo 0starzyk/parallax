@@ -8,7 +8,7 @@ import utils
 
 
 if __name__ == "__main__":
-    original_image = cv2.imread("traffic_light.jpg", cv2.IMREAD_COLOR)
+    original_image = cv2.imread("images/traffic_light.jpg", cv2.IMREAD_COLOR)
 
     cv2.imshow("Window 1", original_image)
     cv2.setMouseCallback('Window 1', MouseDetector.click_event)
