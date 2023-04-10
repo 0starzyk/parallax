@@ -28,6 +28,9 @@ if __name__ == "__main__":
     kernel = np.ones((5, 5))
     dilated_image = cv2.dilate(threshold_image, kernel, iterations=1)
 
-    cv2.imshow("Window 2", dilated_image)
+    print(dilated_image.shape)
+    print(original_image.shape)
+    result_image = cv2.add(cv2.bitwise_not(dilated_image), original_image)
+    cv2.imshow("Window 2", result_image)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
