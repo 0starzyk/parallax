@@ -30,6 +30,12 @@ if __name__ == "__main__":
     contours, hierarchies = cv2.findContours(dilated_image, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
     blank = np.zeros(dilated_image.shape[:2], dtype='uint8')
     cv2.drawContours(blank, contours, -1, (255, 0, 0), 1)
+    for i in contours:
+        M = cv2.moments(i)
+        if M['m00'] != 0:
+            cx = int(M['m10'] / M['m00'])
+            cy = int(M['m01'] / M['m00'])
+        print(f"x: {cx} y: {cy}")
 
     cv2.imshow("Window 2", blank)
     cv2.waitKey(0)
