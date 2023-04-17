@@ -29,7 +29,7 @@ if __name__ == "__main__":
     dilated_image = cv2.dilate(threshold_image, kernel, iterations=1)
     contours, hierarchies = cv2.findContours(dilated_image, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
     blank = np.zeros(dilated_image.shape[:2], dtype='uint8')
-    cv2.drawContours(dilated_image, contours, -1, (255, 0, 0), 1)
+    cv2.drawContours(blank, contours, -1, (255, 0, 0), 1)
 
     cv2.imshow("Window 2", blank)
     cv2.waitKey(0)
