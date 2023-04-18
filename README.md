@@ -1,2 +1,2 @@
 # parallax
-Project using parallax effect to detect distance from object
+Project using parallax to detect distance from object
